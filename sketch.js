@@ -20,7 +20,12 @@ function setup(){
     engine = Engine.create();
     world = engine.world;
     
-    polygon = Bodies.circle(50,300,20);
+     var options={
+        restitution:0.5,
+        friction:1.0,
+        density:20
+    }
+    polygon = Bodies.circle(50,300,20,options);
     World.add(world,polygon);
     
     ground = new Ground(600,height,1200,20);
